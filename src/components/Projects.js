@@ -8,6 +8,7 @@ import ReactVisibilitySensor from 'react-visibility-sensor'
 import PreviewModule from './PreviewModule'
 
 export default function Projects(props) {
+    // state
     const [showProjects, toggleProjects] = useState(false);
     const [showOtherProjects, toggleOthers] = useState(false);
     const [showPreview, togglePreview] = useState(false);
