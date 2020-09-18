@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Particles from 'react-particles-js'
 import particles from '../assets/particles.json'
+import ReactVisibilitySensor from 'react-visibility-sensor'
+import emailjs, { init } from 'emailjs-com';
+
+init("user_M3fSAwhMltp9E4jQFzhg1");
 
 export default function ContactMe(props) {
+    const [formVisibility, setVisibility] = useState(false);
+
+    const sendMail = event => {
+        event.preventDefault();
+
+        emailjs.sendForm('service_ng47oxt', 'template_4ver69b', event.target, 'user_M3fSAwhMltp9E4jQFzhg1')
+            .then(res => {
+                document.getElementById('email').value = '';
+                document.getElementById('name').value = '';
+                document.getElementById('message').value = '';
+            })
+            .catch(err => console.alert(err));
+    }
+
     return (
         <Main id="contact-me">
             <ParticleBox>
@@ -12,17 +30,19 @@ export default function ContactMe(props) {
                     style={{left: 0, top: 0}}
                     params={particles} />
             </ParticleBox>
-            <ContactForm>
-                <h1>Contact Me</h1>
-                <div>
-                    <TextInput placeholder="Email" type="text"/>
-                    <TextInput placeholder="Name" type="text"/>
-                </div>
-                <div>
-                    <TextArea placeholder="Your Message..."/>
-                </div>
-                <Button>Submit</Button>
-            </ContactForm>
+            <ReactVisibilitySensor partialVisibility onChange={e => setVisibility(e)}>
+                <ContactForm visible={formVisibility} onSubmit={sendMail}>
+                    <h1>Contact Me</h1>
+                    <div>
+                        <TextInput placeholder="Name" name="from_name" type="text" id="name"/>
+                        <TextInput placeholder="Email" name="from_email" type="text" id="email"/>
+                    </div>
+                    <div>
+                        <TextArea placeholder="Your Message..." name='message' id="message"/>
+                    </div>
+                    <Button>Submit</Button>
+                </ContactForm>
+            </ReactVisibilitySensor>
         </Main>
     )
 }
@@ -43,6 +63,9 @@ const ParticleBox = styled.div`
     left: 0;
 `
 const ContactForm = styled.form`
+    transition: opacity 600ms, transform 1200ms;
+    transform: ${props => props.visible ? 'translateX(0)' : 'translateX(15px)'};
+    opacity: ${props => props.visible ? 1 : 0};
     max-width: 800px;
     width: 100%;
     background: rgb(20, 20, 20, 0.5);
@@ -59,6 +82,14 @@ const ContactForm = styled.form`
         width: 90%;
         margin: 0 auto;
     }
+    @media only screen and (max-width: 850px) {
+        width: 85%;
+    } 
+    @media only screen and (max-width: 700px) {
+        & > div {
+            flex-direction: column;
+        }
+    }
 `
 const TextInput = styled.input`
     background: rgb(50, 50, 50, 0.5);
@@ -71,6 +102,10 @@ const TextInput = styled.input`
     outline: none;
     flex: 1;
     margin: 10px;
+    @media only screen and (max-width: 700px) {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
 `
 const TextArea = styled.textarea`
     background: rgb(50, 50, 50, 0.5);
@@ -78,11 +113,15 @@ const TextArea = styled.textarea`
     flex: 1;
     font-size: 1rem;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     margin: 15px;
     padding: 15px;
     outline: none;
     color: #f7f6e1;
+    @media only screen and (max-width: 700px) {
+        margin: 10px;
+        min-height: 100px;
+    }
 `
 const Button = styled.button`
     transition: background 300ms;
@@ -109,4 +148,5 @@ const Button = styled.button`
     &:active {
         background: rgba(255, 255, 255, 0.5)
     }
+    
 `

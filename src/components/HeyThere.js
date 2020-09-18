@@ -253,6 +253,7 @@ const Header = styled.div`
         }
     }
     z-index: 20;
+    text-shadow: 1px 1px 2px #000000;
     @media only screen and (max-width: 850px) {
         width: 85%;
         margin: 0 auto;

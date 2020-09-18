@@ -137,8 +137,8 @@ const ProjectBox = styled.div`
     height: 100%;
     max-width: 800px;
     @media only screen and (max-width: 850px) {
-        width: auto;
         margin: 0 auto;
+        width: 85%;
     }
 `
 const ProjectCard = styled.div`
