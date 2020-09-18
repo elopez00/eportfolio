@@ -5,6 +5,7 @@ import AboutMe from './components/AboutMe'
 import './assets/App.css'
 import GlobalStyle from './components/GlobalStyle'
 import Projects from './components/Projects';
+import ContactMe from './components/ContactMe'
 
 class App extends React.Component {
   state = {
@@ -21,6 +22,7 @@ class App extends React.Component {
         <HeyThere allowOverflow={this.allowOverflow} />
         <AboutMe />
         <Projects />
+        <ContactMe />
       </div>
     )
   }

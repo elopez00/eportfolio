@@ -23,6 +23,7 @@ class HeyThere extends React.Component {
 
     learnMore = () => document.getElementById('about-me').scrollIntoView({behavior: 'smooth'})
     experience = () => document.getElementById('experience').scrollIntoView({behavior: "smooth"})
+    contactMe = () => document.getElementById('contact-me').scrollIntoView({behavior: 'smooth'});
 
     render() {
         const { displayGreeting, displayGreeting2, displayName, displayButton} = this.state;
@@ -31,7 +32,7 @@ class HeyThere extends React.Component {
                 <Header showHeader={displayButton}>
                     <a onClick={this.learnMore}>About me</a>
                     <a onClick={this.experience}>Experience</a>
-                    <a>Contact Me</a>
+                    <a onClick={this.contactMe}>Contact Me</a>
                 </Header>
                 <ParticleBox>
                     <Particles
@@ -64,7 +65,7 @@ const Box = styled.div`
     position: relative;
     max-width: 1200px;
     height: 100%;
-    width: 100%;
+    /* width: 100vw; */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -83,14 +84,14 @@ const Box = styled.div`
 `
 const ParticleBox = styled.div`
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
 `
 const Main = styled.div`
     height: 100vh;
-    width: 100vw;
+    /* width: 100%; */
     position: relative;
     background: #02020d;
 `
@@ -100,7 +101,7 @@ const RedDiv = styled.div`
     bottom: 0;
     left: 0;
     background: #000014;
-    width: 100vw;
+    /* width: 100vw; */
     @keyframes init {
         0% { height: 100vh; opacity: 1 }
         25% { height: 100vh; opacity: 1 }
@@ -118,7 +119,7 @@ const RedDiv1 = styled.div`
     bottom: 0;
     left: 0;
     background: #020221;
-    width: 100vw;
+    /* width: 100vw; */
     @keyframes init {
         0% { height: 100vh; opacity: 1 }
         25% { height: 100vh; opacity: 1 }
@@ -136,7 +137,7 @@ const RedDiv2 = styled.div`
     bottom: 0;
     left: 0;
     background: #00002b;
-    width: 100vw;
+    /* width: 100vw; */
     @keyframes init {
         0% { height: 100vh; opacity: 1 }
         25% { height: 100vh; opacity: 1 }
@@ -154,7 +155,7 @@ const RedDiv3 = styled.div`
     bottom: 0;
     left: 0;
     background: #000036;
-    width: 100vw;
+    /* width: 100vw; */
     @keyframes init {
         0% { height: 100vh; opacity: 1 }
         25% { height: 100vh; opacity: 1 }
@@ -236,7 +237,6 @@ const Header = styled.div`
     transform: ${props => props.showHeader ? 'translateX(0)' : 'translate(-30px)'};
     display: flex;
     max-width: 800px;
-    width: 100%;
     color: #f7f6e1;
     font-size: 1.2rem;
     font-weight: bold;
@@ -255,5 +255,17 @@ const Header = styled.div`
     z-index: 20;
     @media only screen and (max-width: 850px) {
         width: 85%;
+        margin: 0 auto;
+        left: 15%;
+    }
+    @media only screen and (max-width: 600px) {
+        font-size: 1rem;
+        left: 0;
+        margin: 0;
+        width: 100%;
+        & > a {
+            padding-right: 0;
+        }
+        justify-content: space-evenly;
     }
 `

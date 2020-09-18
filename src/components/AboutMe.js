@@ -24,40 +24,49 @@ export default function AboutMe(props) {
                                     <span>
                                         <img src={dev} style={{filter: "brightness(0) invert(1)"}} width="150"/>
                                     </span>
-                                    <h3>Experienced</h3>
-                                    <a>extensive experience with web-development</a>
+                                    <div>
+                                        <h3>Experienced</h3>
+                                        <a>extensive experience with web-development</a>
+                                    </div>
                                 </Card>
                                 <Card inSight={showBox}>
                                     <span>
                                         <img src={team} style={{filter: "brightness(0) invert(1)"}} width="150"/>
                                     </span>
-                                    <h3>Efficient</h3>
-                                    <a>easy to work with and easy to work for</a>
+                                    <div>
+                                        <h3>Efficient</h3>
+                                        <a>easy to work with and easy to work for</a>
+                                    </div>
                                 </Card>
                                 <Card inSight={showBox}>
                                     <span>
                                         <img src={check} style={{filter: "brightness(0) invert(1)"}} width="150"/>
                                     </span>
-                                    <h3>Effective</h3>
-                                    <a><strong>most importanty</strong> - always gets the job done</a>
+                                    <div>
+                                        <h3>Effective</h3>
+                                        <a><strong>most importanty</strong> - always gets the job done</a>
+                                    </div>
                                 </Card>
                             </CardBox>
                         </ReactVisibilitySensor>
                     </span>
                         <ReactVisibilitySensor partialVisibility onChange={inSight => toggleUser(inSight)}>
-                            <UserModule showUser={showUser}>
-                                <UserInfo>
-                                    <img src={user} height="250" style={{borderRadius: 15}}/>
-                                </UserInfo>
-                                <UserDescription>
-                                    <Title style={{fontSize: "1.5rem"}}>Wait who?</Title>
-                                    <Description>I'm Eddie Lopez, and the handsome person next to this description is me.
-                                        I was a Software Engineer for ADM but largely focused my work on the creation of
-                                        React Web Applications. I am passionate about what I do, and if there is anything
-                                        that I can guarantee, is that no matter the task, I can get it done.
-                                    </Description>
-                                </UserDescription>
-                            </UserModule>
+                            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                                <Title>About me</Title>
+                                <UserModule showUser={showUser}>
+                                    <UserInfo>
+                                        <img src={user} height="250" style={{borderRadius: 15}}/>
+                                    </UserInfo>
+                                    <UserDescription>
+                                        <SmallTitle style={{fontSize: "1.5rem"}}>Wait who?</SmallTitle>
+                                        <Description>I'm Eddie Lopez, and the handsome person next to this description is me.
+                                            I was a Software Engineer for ADM but largely focused my work on the creation of
+                                            React Web Applications. I am passionate about what I do, and if there is anything
+                                            that I can guarantee, is that no matter the task, I can get it done.
+                                        </Description>
+                                    </UserDescription>
+                                </UserModule>
+                            </div>
                         </ReactVisibilitySensor>
                 </InnerBox>
             </Box>
@@ -78,7 +87,6 @@ const Main = styled.div`
 `
 const Box = styled.div`
     margin: 0 auto;
-    width: 100%;
     display: grid;
     max-width: 1200px;
     height: 100%;
@@ -87,11 +95,14 @@ const Box = styled.div`
 const CardBox = styled.div`
     display: flex;
     justify-content: space-between;
-    width: 100%;
     max-width: 800px;
     @media only screen and (max-width: 850px) {
         width: 85%;
         margin: 0 auto;
+    }
+    @media only screen and (max-width: 700px) {
+        flex-direction: column;
+        margin-bottom: 30px;
     }
 `
 const Card = styled.div`
@@ -101,24 +112,27 @@ const Card = styled.div`
     opacity: ${props => props.inSight ? 1 : 0};
     transform: ${props => props.inSight ? "translateY(0)" : "translateY(30px)"};
     display: grid;
-    grid-template-rows: 160px 20px 70px;
+    grid-template-rows: 160px 90px;
     max-width: 200px;
     max-height: 250px;
     min-width: 200px;
     color: #f7f6e1;
     background: transparent;
-    /* border: 2px solid #f7f6e1; */
     border-radius: 15px;
     & > span {
         display: flex;
         align-items: center;
         justify-content: space-around;
     }
-    & > a {
+    & > div {
+        display: grid;
+        grid-template-rows: 20px 70px;
+    }
+    & > div > a {
         padding: 10px;
         text-align: center;
     }
-    & > h3 {
+    & > div > h3 {
         margin: 0 auto;
     }
     @media only screen and (max-width: 850px) {
@@ -130,11 +144,45 @@ const Card = styled.div`
             width: 80px;
         }
     }
+    @media only screen and (max-width: 700px) {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        max-width: 100%;
+        align-items: center;
+        margin: 15px;
+        & > div {
+            display: flex;
+            flex-direction: column;
+        }
+        & > div > a { 
+            margin-left: 15px;
+            text-align: left;
+        }
+        & > div > h3 {
+            margin-left: 15px;
+            text-align: left;
+            padding-left: 10px;
+        }
+    }
 `
 const Title = styled.h1`
     color: #f7f6e1;
     margin: 0 auto;
     padding-bottom: 60px;
+    @media only screen and (max-width: 850px) {
+        margin-top: 100px;
+        padding-bottom: 30px;
+    }
+`
+const SmallTitle = styled.h1`
+    font-size: 1rem;
+    color: #f7f6e1;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    @media only screen and (max-width: 700px) {
+        text-align: center;
+    }
 `
 const Description = styled.p`
     color: #f7f6e1;
@@ -148,7 +196,6 @@ const UserModule = styled.div`
     opacity: ${props => props.showUser ? 1 : 0};
     transform: ${props => props.showUser ? "translateY(0px)" : "translateY(30px)"};
     max-width: 800px;
-    width: 100%;
     height: 250px;
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -162,6 +209,11 @@ const UserModule = styled.div`
             height: 200px;
         }
     }
+    @media only screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px 1fr;
+        margin-bottom: 30px;
+    }
 `
 const UserInfo = styled.div`
     display: flex;
@@ -171,14 +223,21 @@ const UserDescription = styled.div`
     & h1 {
         padding-bottom: 0px;
     }
+    @media only screen and (max-width: 700px) {
+        width: 85%;
+        margin: 0 auto;
+    }
 `
 const InnerBox = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     justify-content: space-evenly;
+    @media only screen and (max-width: 700px) {
+        & > span > h1 { display: none; }
+        flex-direction: column-reverse;
+    }
     & > span {
         width: 800px;
         margin: 0 auto;
@@ -186,6 +245,12 @@ const InnerBox = styled.div`
         flex-direction: column;
         @media only screen and (max-width: 850px) {
             width: 85%;
+        }
+    }
+    & > div > h1 { 
+        display: none;
+        @media only screen and (max-width: 700px) {
+            display: block;
         }
     }
 `

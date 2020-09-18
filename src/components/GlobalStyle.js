@@ -8,6 +8,5 @@ export default function setGlobalStyle(props) {
 const GlobalStyle = createGlobalStyle`
     body {
         overflow: ${props => props.overflow ? "auto" : "hidden"};
-        overflow-x: hidden
-    }
+    } 
 `
