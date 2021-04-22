@@ -4,7 +4,7 @@ import HeyThere from './components/HeyThere'
 import AboutMe from './components/AboutMe'
 import './assets/App.css'
 import GlobalStyle from './components/GlobalStyle'
-import Projects from './components/Projects';
+import Projects from './components/Projects/Projects';
 import ContactMe from './components/ContactMe'
 
 class App extends React.Component {
