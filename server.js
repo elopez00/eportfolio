@@ -11,6 +11,7 @@ app.use((req,res,next) => {
     console.log(redirectHost)
 
     if (host.includes('localhost') || host.includes('eportfolio')) next();
+    next();
     res.redirect('https://' + host + req.url);
 })
 
