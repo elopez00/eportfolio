@@ -9,7 +9,7 @@ app.use((req,res,next) => {
 
     if (host.includes('localhost') || host.includes('eportfolio')) next();
     else if ((req.get('X-Forwarded-Proto') !== 'https')) {
-        console.log(debug)
+        console.log(host)
         res.redirect(host + req.url);
     } else next();
 })
