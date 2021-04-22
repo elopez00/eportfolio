@@ -10,7 +10,7 @@ app.use((req,res,next) => {
 
     console.log(redirectHost)
 
-    if (host.includes('localhost')) next();
+    if (host.includes('localhost') || host.includes('eportfolio')) next();
     else if (!host.includes('www')) res.redirect(res.redirect('https://' + redirectHost + req.url));
     else if ((req.get('X-Forwarded-Proto') !== 'https')) {
         res.redirect('https://' + redirectHost + req.url);
