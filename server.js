@@ -5,11 +5,12 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.use((req,res,next) => {
-    const host = req.get('host');;
+    const host = 'https://' + req.get('host');
 
     if (host.includes('localhost') || host.includes('eportfolio')) next();
     else if ((req.get('X-Forwarded-Proto') !== 'https')) {
-        res.redirect('https://' + host + req.url);
+        console.log(debug)
+        res.redirect(host + req.url);
     } else next();
 })
 
