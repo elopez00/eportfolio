@@ -8,8 +8,10 @@ import emailjs, { init } from 'emailjs-com';
 init("user_M3fSAwhMltp9E4jQFzhg1");
 
 export default function ContactMe(props) {
+    // state
     const [formVisibility, setVisibility] = useState(false);
 
+    // sends mail to personal email
     const sendMail = event => {
         event.preventDefault();
 

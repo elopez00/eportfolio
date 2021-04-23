@@ -22,6 +22,12 @@ const projects = {
         name: 'Room Escape',
         title: 'Room Escape - Personal Project',
         description: 'Room Escape is a first person shooter puzzle game that I created using C++ and Unreal Engine 4.'
+    },
+    assuranceMezz: {
+        img: require("../assets/assurancemezz.png"),
+        name: 'Assurance',
+        title: 'Assurance Mezzanine Fund - Freelance',
+        description: 'I was hired to redesign and ship the webpage for a private investment firm. Using React and EmailJS I built the webpage from scrap and implemented a direct messaging module for feedback and contacting purpose.'
     }
 }
 
