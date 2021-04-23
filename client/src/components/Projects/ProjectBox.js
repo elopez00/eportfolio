@@ -8,7 +8,7 @@ export default function ProjectBox(props) {
     
     return (
         <ReactVisibilitySensor partialVisibility onChange={isVisible => toggleProject(isVisible)}>
-            <CProjectBox showBox={showProject} translate={props.index % 2 == 0 ? -15 : 15}>
+            <CProjectBox showBox={showProject} translate={props.index % 2 == 0 ? -25 : 25}>
                 { props.children }
             </CProjectBox>
         </ReactVisibilitySensor>

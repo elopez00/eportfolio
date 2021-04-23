@@ -10,8 +10,6 @@ export default function AboutMe(props) {
     const [showBox, toggleBox] = useState(false);
     const [showUser, toggleUser] = useState(false);
     
-    const learnMore = () => document.getElementById('about-me').scrollIntoView({behavior: 'smooth'})
-
     return (
         <Main id="about-me">
             <Box>
@@ -59,10 +57,14 @@ export default function AboutMe(props) {
                                     </UserInfo>
                                     <UserDescription>
                                         <SmallTitle style={{fontSize: "1.5rem"}}>Wait who?</SmallTitle>
-                                        <Description>I'm Eddie Lopez, and the handsome person next to this description is me.
-                                            I was a Software Engineer for ADM but largely focused my work on the creation of
-                                            React Web Applications. I am passionate about what I do, and if there is anything
-                                            that I can guarantee, is that no matter the task, I can get it done.
+                                        <Description>
+                                            My name is Eddie Lopez and I am a software developer from Nicaragua.
+                                            I currently reside in Gainesville Florida where I am pursuing my undergraduate 
+                                            degree in Computer Science at the University of Florida. Although I specialize
+                                            in frontend and web-applications, I am interested in working in all areas of 
+                                            software development. I have over a year of professional experience and am
+                                            willing to expand my knowledge and my horizons to any opportunities that come 
+                                            my way.
                                         </Description>
                                     </UserDescription>
                                 </UserModule>
