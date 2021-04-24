@@ -27,7 +27,14 @@ const projects = {
         img: require("../assets/assurancemezz.png"),
         name: 'Assurance',
         title: 'Assurance Mezzanine Fund - Freelance',
-        description: 'I was hired to redesign and ship the webpage for a private investment firm. Using React and EmailJS I built the webpage from scrap and implemented a direct messaging module for feedback and contacting purpose.'
+        description: 'I was hired to redesign and ship the webpage for a private investment firm. Using React and EmailJS I built the webpage from scrap and implemented a direct messaging module for feedback and contacting purpose.',
+        link: 'https://www.assurancemezz.com'
+    },
+    partnrup: {
+        img: require('../assets/partnrup.jpg'),
+        name: 'Partnrup',
+        title: 'Partnrup - Personal Project',
+        description: 'PartnrUp is a service that will help bring people together to start businesses. The ultimate goal is to remove the barrier of entry to good ideas and unite the people that can execute it. Working with a devout team, we hope to bring this platform to mobile and web versions in 2021.'
     }
 }
 

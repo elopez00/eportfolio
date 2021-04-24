@@ -31,7 +31,15 @@ export default function PreviewModule(props) {
                 </span>
                 <Description>
                     <h2>{props.project.title}</h2>
-                    <p>{props.project.description}</p>
+                    <p> {props.project.description}
+                        {props.project.link ? (
+                            <React.Fragment>
+                                <br />
+                                <br />
+                                visit: <a target="_blank" href={props.project.link}> {props.project.link}</a>
+                            </React.Fragment>
+                        ) : null}
+                    </p>  
                 </Description>
                 <i className="material-icons" onClick={props.toggleModule}>close</i>
             </CPreviewModule>
@@ -102,6 +110,9 @@ const Description = styled.div`
     }
     & p {
         padding-bottom: 20px
+    }
+    & a {
+        color: #2ec9e8;
     }
     @media only screen and (max-width: 700px) {
         width: 350px;
