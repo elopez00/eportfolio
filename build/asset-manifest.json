@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.eb979f67.chunk.css",
+    "main.js": "/static/js/main.95889d01.chunk.js",
+    "main.js.map": "/static/js/main.95889d01.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c9b7527f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c9b7527f.js.map",
+    "static/js/2.279cfc86.chunk.js": "/static/js/2.279cfc86.chunk.js",
+    "static/js/2.279cfc86.chunk.js.map": "/static/js/2.279cfc86.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1123acc1f997428ae973920f1c2ddac5.js": "/precache-manifest.1123acc1f997428ae973920f1c2ddac5.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.eb979f67.chunk.css.map": "/static/css/main.eb979f67.chunk.css.map",
+    "static/js/2.279cfc86.chunk.js.LICENSE.txt": "/static/js/2.279cfc86.chunk.js.LICENSE.txt",
+    "static/media/assurancemezz.png": "/static/media/assurancemezz.41313b45.png",
+    "static/media/bosawas-ui.jpeg": "/static/media/bosawas-ui.40eb8745.jpeg",
+    "static/media/hercules.jpeg": "/static/media/hercules.fb19b6f0.jpeg",
+    "static/media/important.jpeg": "/static/media/important.ebe547b8.jpeg",
+    "static/media/pageshield.jpeg": "/static/media/pageshield.e2fdfec9.jpeg",
+    "static/media/room-escape.jpeg": "/static/media/room-escape.b3873b71.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c9b7527f.js",
+    "static/js/2.279cfc86.chunk.js",
+    "static/css/main.eb979f67.chunk.css",
+    "static/js/main.95889d01.chunk.js"
+  ]
+}
