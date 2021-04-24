@@ -4,13 +4,13 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-app.get('*', (req, res, next) => {
-    const host = req.headers.host;
-    if (host.includes('localhost') || host.includes('eportfolio'))
-        next();
+// app.get('*', (req, res, next) => {
+//     const host = req.headers.host;
+//     if (host.includes('localhost') || host.includes('eportfolio'))
+//         next();
 
-    res.redirect('https://' + host + req.url);
-})
+//     res.redirect('https://' + host + req.url);
+// })
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
