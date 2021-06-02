@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function ProjectCard({project, onClick}) {
+export default function ProjectCard({project, onClick, style}) {
     console.log(onClick)
     return (
-        <CProjectCard backgroundImg={project.img} onClick={() => onClick && onClick(project)}>
+        <CProjectCard backgroundImg={project?.img} onClick={() => onClick && onClick(project)} style={style}>
             <span>
-                <p> {project.name}
+                <p> {project?.name}
                     <i className="material-icons">info</i>
                 </p>
             </span>

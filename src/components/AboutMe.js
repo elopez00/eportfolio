@@ -42,7 +42,7 @@ export default function AboutMe(props) {
                                     </span>
                                     <div>
                                         <h3>Effective</h3>
-                                        <a><strong>most importanty</strong> - always gets the job done</a>
+                                        <a><strong>most importantly</strong> - always gets the job done</a>
                                     </div>
                                 </Card>
                             </CardBox>
@@ -57,7 +57,7 @@ export default function AboutMe(props) {
                                         {/* <img src={user} height="250" width="250" style={{borderRadius: 15}}/> */}
                                     </UserInfo>
                                     <UserDescription>
-                                        <SmallTitle style={{fontSize: "1.5rem"}}>Wait who?</SmallTitle>
+                                        <SmallTitle style={{fontSize: "1.5rem"}}>Wait, who?</SmallTitle>
                                         <Description>
                                             My name is Eddie Lopez and I am a software developer from Nicaragua with US citizenship.
                                             I currently reside in Gainesville Florida where I am pursuing my undergraduate 

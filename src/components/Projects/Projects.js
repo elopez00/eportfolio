@@ -38,7 +38,10 @@ export default function Projects(props) {
             ]);
             rowDistributor(keys.splice(2), rows);
         } else if (keys.length === 1) {
-            rows.push([<ProjectCard project={projects[keys[0]]} onClick={handleClick} />]);
+            rows.push([
+                <ProjectCard project={projects[keys[0]]} onClick={handleClick} />,
+                <ProjectCard style={{opacity: 0, visibility: "hidden"}}/>
+            ]);
             return 
         } else {
             return
