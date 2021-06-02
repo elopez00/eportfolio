@@ -24,6 +24,7 @@ const CProjectCard = styled.div`
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
+    border-radius: 15px;
     & > span {
         background-image: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
         background-color: transparent;

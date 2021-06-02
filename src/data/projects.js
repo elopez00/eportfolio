@@ -31,10 +31,10 @@ const projects = {
         link: 'https://www.assurancemezz.com'
     },
     partnrup: {
-        img: require('../assets/partnrup.jpg'),
-        name: 'Partnrup',
-        title: 'Partnrup - Personal Project',
-        description: 'PartnrUp is a service that will help bring people together to start businesses. The ultimate goal is to remove the barrier of entry to good ideas and unite the people that can execute it. Working with a devout team, we hope to bring this platform to mobile and web versions in 2021.'
+        img: require('../assets/scale.png'),
+        name: 'Scale',
+        title: 'Scale - Personal Project',
+        description: 'Scale is an application aimed towards helping college students better understand the concepts of cash flow and budgeting. The backend of this application is a RESTful API built using Golang and Plaid API to connect to user financial info and is hosted in AWS. The frontend is being developed in Expo, a framework pertaining to React-Native that allows singe-codebase native development. Both projets are publically available on my github.com/elopez00'
     }
 }
 

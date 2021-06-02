@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import dev from '../assets/dev.png'
 import team from '../assets/team.png'
 import check from '../assets/check.png'
-import user from '../assets/important.jpeg'
+import user from '../assets/me.jpg'
 import ReactVisibilitySensor from 'react-visibility-sensor';
 
 export default function AboutMe(props) {    
@@ -53,7 +53,8 @@ export default function AboutMe(props) {
                                 <Title>About me</Title>
                                 <UserModule showUser={showUser}>
                                     <UserInfo>
-                                        <img src={user} height="250" style={{borderRadius: 15}}/>
+                                        <div />
+                                        {/* <img src={user} height="250" width="250" style={{borderRadius: 15}}/> */}
                                     </UserInfo>
                                     <UserDescription>
                                         <SmallTitle style={{fontSize: "1.5rem"}}>Wait who?</SmallTitle>
@@ -220,6 +221,14 @@ const UserModule = styled.div`
 const UserInfo = styled.div`
     display: flex;
     align-items: center;
+    & > div {
+        background-image: url(${user});
+        width: 90%;
+        height: 250px;
+        background-size: cover;
+        background-position-y: bottom;
+        border-radius: 15px;
+    }
 `
 const UserDescription = styled.div`
     & h1 {
