@@ -53,13 +53,13 @@ export default function AboutMe(props) {
                                 <Title>About me</Title>
                                 <UserModule showUser={showUser}>
                                     <UserInfo>
-                                        <div />
+                                        <span />
                                         {/* <img src={user} height="250" width="250" style={{borderRadius: 15}}/> */}
                                     </UserInfo>
                                     <UserDescription>
                                         <SmallTitle style={{fontSize: "1.5rem"}}>Wait who?</SmallTitle>
                                         <Description>
-                                            My name is Eddie Lopez and I am a software developer from Nicaragua.
+                                            My name is Eddie Lopez and I am a software developer from Nicaragua with US citizenship.
                                             I currently reside in Gainesville Florida where I am pursuing my undergraduate 
                                             degree in Computer Science at the University of Florida. Although I specialize
                                             in frontend and web-applications, I am interested in working in all areas of 
@@ -206,7 +206,7 @@ const UserModule = styled.div`
     @media only screen and (max-width: 850px) {
         width: 85%;
         height: auto;
-        & img {
+        & span {
             margin: 0 auto;
             width: 200px;
             height: 200px;
@@ -214,20 +214,27 @@ const UserModule = styled.div`
     }
     @media only screen and (max-width: 700px) {
         grid-template-columns: 1fr;
-        grid-template-rows: 250px 1fr;
+        grid-template-rows: 300px 1fr;
         margin-bottom: 30px;
     }
 `
 const UserInfo = styled.div`
     display: flex;
     align-items: center;
-    & > div {
+    & > span {
+        display: block;
         background-image: url(${user});
-        width: 90%;
+        margin: 0 auto;
+        width: 250px;
         height: 250px;
         background-size: cover;
         background-position-y: bottom;
         border-radius: 15px;
+    }
+    @media only screen and (max-width: 700px) {
+        & > span {
+            height: 250px;
+        }
     }
 `
 const UserDescription = styled.div`

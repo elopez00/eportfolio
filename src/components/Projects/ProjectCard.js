@@ -21,6 +21,7 @@ const CProjectCard = styled.div`
     height: 100%;
     background-image: url(${props => props.backgroundImg});
     background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: flex-end;
     flex-direction: column;
